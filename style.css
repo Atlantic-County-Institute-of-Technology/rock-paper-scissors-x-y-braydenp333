@@ -4,64 +4,100 @@ body {
     align-items: center;
     align-content: flex-start;
     margin-top: 50px;
+    background-color: rgb(162, 106, 207);
 }
 .settings {
-    position: absolute;
-    top:500px;
-    left:725px;
-    border: solid;
-    border-color: black;
+    position: relative;
+    top:250px;
+    border-color: rgb(0, 0, 0);
 }
 .reset { 
     width: 250px;
     height: 100px;
-    border-radius: 25%;
-    background-color: red;
-    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 0%;
+    background-color: rgba(255, 0, 242, 0.30);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight:bolder;
+    font-size: larger;
     color:white;
 }
 .clear {
     width: 250px;
     height: 100px;
-    border-radius: 25%;
-    background-color: blue;
-    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 0%;
+    background-color: rgba(255, 0, 242, 0.30);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight:bolder;
+    font-size: larger;
     color:white;
 }
 .choices {
-    position: absolute;
-    top:390px;
-    left:720px;
-    border: solid;
+    top:225px;
+    right:5px;
+    position: relative;
     border-color: black;
 }
 .rock {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background-color: red;
+    background-color: rgba(255, 0, 242, 0.5);
+    font-size: larger;
 }
 .paper {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background-color: blue;
+    background-color: rgba(255, 0, 242, 0.5);
+    font-size: larger;
 }
 .scissors {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background-color: lime;
+    background-color: rgba(255, 0, 242, 0.5);
+    font-size: larger;
 }
 .x {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background-color: yellow;
+    background-color: rgba(255, 0, 242, 0.5);
+    font-size: larger;
 }
 .y {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background-color: orange;
+    background-color: rgba(255, 0, 242, 0.5);
+    font-size: larger;
+}
+.scoreboard {
+    position:absolute;
+    top:50px;
+    
+}
+.playscorebutton {
+    width: 500px;
+    height: 50px;
+    background-color: rgba(255, 0, 242, 0.5);
+    font-size: larger;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:white;
+}
+.cpuscorebutton {
+    width: 500px;
+    height: 50px;
+    background-color: rgba(255, 0, 242, 0.5);
+    font-size: larger;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:white;
+}
+.gamesplayedcounter {
+    width: 500px;
+    height: 50px;
+    background-color: rgba(255, 0, 242, 0.5);
+    font-size: larger;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:white;
 }
