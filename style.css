@@ -11,7 +11,7 @@ body {
     top:250px;
     border-color: rgb(0, 0, 0);
 }
-.reset { 
+.settingsbutton { 
     width: 250px;
     height: 100px;
     border-radius: 0%;
@@ -21,79 +21,27 @@ body {
     font-size: larger;
     color:white;
 }
-.clear {
-    width: 250px;
-    height: 100px;
-    border-radius: 0%;
-    background-color: rgba(255, 0, 242, 0.30);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight:bolder;
-    font-size: larger;
-    color:white;
-}
+
 .choices {
     top:225px;
     right:5px;
     position: relative;
     border-color: black;
 }
-.rock {
+.button {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     background-color: rgba(255, 0, 242, 0.5);
     font-size: larger;
-}
-.paper {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: rgba(255, 0, 242, 0.5);
-    font-size: larger;
-}
-.scissors {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: rgba(255, 0, 242, 0.5);
-    font-size: larger;
-}
-.x {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: rgba(255, 0, 242, 0.5);
-    font-size: larger;
-}
-.y {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: rgba(255, 0, 242, 0.5);
-    font-size: larger;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.425);
 }
 .scoreboard {
     position:absolute;
     top:50px;
     
 }
-.playscorebutton {
-    width: 500px;
-    height: 50px;
-    background-color: rgba(255, 0, 242, 0.5);
-    font-size: larger;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color:white;
-}
-.cpuscorebutton {
-    width: 500px;
-    height: 50px;
-    background-color: rgba(255, 0, 242, 0.5);
-    font-size: larger;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color:white;
-}
-.gamesplayedcounter {
+.score {
     width: 500px;
     height: 50px;
     background-color: rgba(255, 0, 242, 0.5);
