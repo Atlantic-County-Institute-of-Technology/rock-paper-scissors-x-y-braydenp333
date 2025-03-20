@@ -14,3 +14,4 @@ for(let i = 0; i < button_list.length; i++)
 function clicks() {
     clicks.play;
 }
+
