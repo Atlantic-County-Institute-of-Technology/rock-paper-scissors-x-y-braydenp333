@@ -1,112 +1,108 @@
-const Rockbtn = document.getElementById("Rock");
-const Paperbtn = document.getElementById("Paper");
-const Scissorsbtn = document.getElementById("Scissors");
-const xbtn = document.getElementById("x");
-const ybtn = document.getElementById("y");
-const buttons = document.querySelectorAll('button');
-let playerscore = document.getElementById("playscorebutton");
-let cpuscore = document.getElementById("cpuscorebutton");
-var userpick = "";
-var computerchoice = "";
-/* Computer Math */
-function computerchoice () {
-    Math.random(5)
+const player_score = document.getElementById('playscorebutton');
+const computer_score = document.getElementById('cpuscorebutton');
+const player_choice = document.getElementById('playerversus');
+const computer_choice = document.getElementById('cpuversus');
+const games_played = document.getElementById('gamesplayedcounter');
+const rock = document.getElementById('rock');
+const paper = document.getElementById('paper');
+const scissors = document.getElementById('scissors');
+const x = document.getElementById('x');
+const y = document.getElementById('y');
+const choices = document.querySelectorAll('.button');
+const result = document.getElementById('result');
+const reset_button = document.getElementById('reset');
+
+let player_score_val = 0;
+let computer_score_val = 0;
+let games_played_val = 0;
+
+const choices_list = ['rock', 'paper','scissors', 'x', 'y'];
+const choice_icons = ['🪨', '📄', '✂️'];
+
+reset_button.addEventListener('click', () => {
+    console.log("Reset");
+    reset_game();
+})
+choices.forEach(choice => {
+    choice.addEventListener('click', () => {
+        console.log("Choice")
+        check_winner((choices_list.indexOf(choice.id)+1), cpu_choose_item());
+    })
+})
+function cpu_choose_item() { 
+    return Math.floor(Math.random() * choices.length) + 1 
+}
+function check_winner(player, cpu) {
+    console.log(`Player: ${player} | Computer: ${cpu}`);
+    let winner;
+    if(player == cpu)
+    {
+        winner = "Tie!"
+    }
+    /*
+    rock = scissors(3) and y(5)
+    paper = rock(1) and x(4)
+    scissors = paper(2) and y(5)
+    x = rocK(1) and scissors(3)
+    y = paper(2) and x(4)
+    */
+    else if(player == 1) {
+        if(cpu == 3 || cpu == 5) {
+            winner = "player win"
+        }
+        else 
+            winner = "cpu win"
+    }    
+    else if(player == 2)
+        if(cpu == 1 || cpu == 4) {
+            winner = "player win"
+        }
+        else 
+            winner = "cpu win"
+    else if(player == 3)
+        if(cpu == 2 || cpu == 5) {
+            winner = "player win"
+        }
+        else 
+            winner = "cpu win"
+    else if(player == 4)
+        if(cpu == 1 || cpu == 3) {
+            winner = "player win"
+        }
+        else 
+            winner = "cpu win"
+    else if(player == 5)
+        if(cpu == 2 || cpu == 4) {
+            winner = "player win"   
+        }
+        else 
+            winner = "cpu win"
+        if(winner.match("player win")) {
+            player_score_val++;
+            }
+            else if(winner.match("cpu win")) {
+                computer_score_val++;
+            }
+            games_played_val++;
+console.log(`Player Score: ${player_score_val} | CPU Score: ${computer_score_val}`)
+/* updateUI(player, cpu, winner); */
+}
+
+function updateUI(player, cpu, winner) {
+    result.textContent = winner;
+    player_score.innerHTML = player_score_val;
+    computer_score.innerHTML = computer_score_val;
 }
 
 
-function userChoiceRock() {
-    userpick = 1;
-        alert(userpick)
-}
-rock.addEventListener("click", userChoiceRock)
 
-function userChoicePaper() {
-    userpick = 2;
-        alert(userpick)
-}
-paper.addEventListener("click", userChoicePaper)
+function reset_game() {
+    player_score.innerHTML = '';
+    computer_score.innerHTML = '';
 
-function userChoiceScissors() {
-    userpick = 3;
-        alert(userpick)
-}
-scissors.addEventListener("click", userChoiceScissors)
+    player_score_val = 0;
+    computer_score_val = 0;
 
-function userChoiceX() {
-    userpick = 4;
-        alert(userpick)
-}
-x.addEventListener("click", userChoiceX)
-
-function userChoiceY() {
-    userpick = 5;
-        alert(userpick)
-}
-y.addEventListener("click", userChoiceY)
-
-if (userpick == 1) {
-    if (computerchoice == 1) {
-        alert("Tie")
-        playerscore++
-    }
-    else if (computerchoice == 3 || 5) {
-        alert("Player Wins!")
-        playerscore++
-    }
-    else {
-        alert ("Computer Wins!")
-        cpuscore++
-    }
-}
-if (userpick == 2) {
-    if (computerchoice == 2) {
-        alert("Tie")
-    }
-    else if (computerchoice == 1 || 4) {
-        alert("Player Wins!")
-        playerscore++
-    }
-    else {
-        alert ("Computer Wins!")
-        cpuscore++
-    }
-}
-if (userpick == 3) {
-    if (computerchoice == 3) {
-        alert("Tie")
-    }
-    else if (computerchoice == 2 || 5) {
-        alert("Player Wins!")
-        playerscore++
-    }
-    else {
-        alert ("Computer Wins!")
-        cpuscore++
-    }
-}
-if (userpick == 4) {
-    if (computerchoice == 4) {
-        alert("Tie")
-    }
-    else if (computerchoice == 1 || 3) {
-        alert("Player Wins!")
-        playerscore++
-    }
-    else {
-        alert ("Computer Wins!")
-        cpuscore++
-    }
-}
-if (userpick == 5) {
-    if (computerchoice == 5) {
-        alert("Tie")
-    }
-    else if (computerchoice == 2 || 4) {
-        alert("Player Wins!")
-        playerscore++
-    }
-    else {
-        alert ("Computer Wins!")
-        cpuscore++
-    }
+    player_choice.innerHTML = '';
+    computer_choice.innerHTML = '';
 }
