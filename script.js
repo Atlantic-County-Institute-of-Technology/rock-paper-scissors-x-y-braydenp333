@@ -1,7 +1,7 @@
 const player_score = document.getElementById('playscorebutton');
 const computer_score = document.getElementById('cpuscorebutton');
-const player_choice = document.getElementById('playerversus');
-const computer_choice = document.getElementById('cpuversus');
+const computer_choice = document.getElementById('playerversus');
+const player_choice = document.getElementById('cpuversus');
 const games_played = document.getElementById('gamesplayedcounter');
 const rock = document.getElementById('rock');
 const paper = document.getElementById('paper');
@@ -17,7 +17,7 @@ let computer_score_val = 0;
 let games_played_val = 0;
 
 const choices_list = ['rock', 'paper','scissors', 'x', 'y'];
-const choice_icons = ['🪨', '📄', '✂️'];
+const choice_icons = ['🪨', '📄', '✂️', 'x', 'y'];
 
 reset_button.addEventListener('click', () => {
     console.log("Reset");
@@ -34,6 +34,8 @@ function cpu_choose_item() {
 }
 function check_winner(player, cpu) {
     console.log(`Player: ${player} | Computer: ${cpu}`);
+   // setTimeout(() => {
+
     let winner;
     if(player == cpu)
     {
@@ -83,26 +85,32 @@ function check_winner(player, cpu) {
             else if(winner.match("cpu win")) {
                 computer_score_val++;
             }
-            games_played_val++;
 console.log(`Player Score: ${player_score_val} | CPU Score: ${computer_score_val}`)
-/* updateUI(player, cpu, winner); */
+
+updateUI(player, cpu, winner);
+// }, 3000); 
+
 }
 
 function updateUI(player, cpu, winner) {
-    result.textContent = winner;
+    games_played_val++;
     player_score.innerHTML = player_score_val;
     computer_score.innerHTML = computer_score_val;
+    games_played.innerHTML = games_played_val;
+    player_choice.textContent = choice_icons[player-1];
+    computer_choice.textContent = choice_icons[cpu-1];
 }
 
 
 
 function reset_game() {
-    player_score.innerHTML = '';
-    computer_score.innerHTML = '';
+    player_score.innerHTML = "0";
+    computer_score.innerHTML = "0" ;
 
     player_score_val = 0;
     computer_score_val = 0;
 
     player_choice.innerHTML = '';
     computer_choice.innerHTML = '';
+    updateUI(player, cpu, winner)
 }
